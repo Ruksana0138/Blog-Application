@@ -1,16 +1,32 @@
-# React + Vite
+# Blog Application (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend-only Blog Application built using **React.js** and **Tailwind CSS**.  
+This project demonstrates React fundamentals, component-based architecture, state management, basic CRUD operations, and clean UI design, as required in the task assignment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Project Overview
 
-## React Compiler
+This Blog Application allows users to:
+- Create blog posts
+- View a list of blogs
+- Edit existing blogs
+- Delete blogs
+- View full blog details on a separate page
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All data handling is done on the **frontend level** using **browser storage (localStorage)**.  
+No backend or database is used, as per the task requirements.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **React.js** (Functional Components & Hooks)
+- **Tailwind CSS** (Styling)
+- **React Router DOM** (Optional routing for detail view)
+- **Vite** (Development & build tool)
+- **Browser Storage (localStorage)** for persistence
+
+---
+
+
