@@ -1,54 +1,47 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function BlogCard({ blog, deleteBlog, setEditBlog }) {
-  const navigate = useNavigate();
-
-  const previewText =
-    blog.content.length > 120
-      ? blog.content.slice(0, 120) + "..."
-      : blog.content;
-
   return (
     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
-      {/* Title */}
-      <h3 className="text-xl font-bold text-gray-800 capitalize">
-        {blog.title}
-      </h3>
+      {/* Blog Title */}
+      <h3 className="text-xl font-bold text-gray-800">{blog.title}</h3>
 
-      {/* Content Preview */}
-      <p className="text-gray-600 mt-2">
-        {previewText}
-      </p>
+      {/* Rich text preview */}
+      <div
+        className="text-gray-600 mt-2 line-clamp-2"
+        dangerouslySetInnerHTML={{ __html: blog.content }}
+      />
 
-      {/* Meta Info */}
-      <div className="text-sm text-gray-500 mt-4 flex flex-col gap-1">
-        <span>✍️ {blog.author}</span>
-        <span>📅 {blog.createdAt}</span>
+      {/* Author & Date */}
+      <div className="text-sm text-gray-500 mt-4 space-y-1">
+        <p>✍️ {blog.author}</p>
+        <p>📅 {blog.createdAt}</p>
       </div>
 
-      {/* Actions */}
+      {/* Action buttons */}
       <div className="flex gap-3 mt-5">
         <button
           onClick={() => setEditBlog(blog)}
-          className="px-4 py-2 bg-yellow-400 text-white rounded-lg"
+          className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded-lg"
         >
           Edit
         </button>
 
         <button
           onClick={() => deleteBlog(blog.id)}
-          className="px-4 py-2 bg-red-500 text-white rounded-lg"
+          className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg"
         >
           Delete
         </button>
 
-        <button
-          onClick={() => navigate(`/blog/${blog.id}`)}
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg"
+        <Link
+          to={`/blog/${blog.id}`}
+          className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg"
         >
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   );
 }
+

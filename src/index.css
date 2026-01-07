@@ -1,9 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  @apply bg-gray-100 text-gray-800;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+
+.ql-editor {
+  min-height: 250px;
+  font-size: 16px;
 }
+
+.ql-toolbar {
+  border-radius: 6px 6px 0 0;
+}
+
+.ql-container {
+  border-radius: 0 0 6px 6px;
+}
+
+
+
+/* TipTap editor base styles */
+.ProseMirror {
+  min-height: 150px;
+  padding: 12px;
+  outline: none;
+  cursor: text;
+}
+
+/* Placeholder text */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #9ca3af; /* gray-400 */
+  pointer-events: none;
+  height: 0;
+}
+
+/* Blog content styles */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+/* Ordered list (numbered list) styles */
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose ol li {
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+
